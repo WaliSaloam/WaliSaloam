@@ -1,0 +1,78 @@
+public class Disciplina 
+{
+	String nome;
+	Aluno pessoas[]=new Aluno[10];
+	
+	Aluno a1=new Aluno("Ayanne",6,5.6);
+	Aluno a2=new Aluno("Catielen",10,10);
+	Aluno a3=new Aluno("Marilia",10,10);
+	Aluno a4=new Aluno("Wali",10,10);
+	Aluno a5=new Aluno("Walle",10,10);
+	Aluno a6=new Aluno("Fred",7,9);
+	Aluno a7=new Aluno("Ana",0,0);
+	Aluno a8=new Aluno("Evellyn",4,4);
+	Aluno a9=new Aluno("Nicolau",8,8.5);
+	Aluno a10=new Aluno("Mayara",5,5);
+	
+	
+	
+	public Disciplina(String nome, Aluno[] pessoas) 
+	{
+		this.nome = nome;
+		this.pessoas = pessoas;
+	}
+	
+	public void mostrarLista()
+	{
+		for(Aluno x:pessoas)
+		{
+			System.out.println("Nome:"+x.getNome());
+		}
+	}
+	
+	public void mostrarAprovados() 
+	{
+		int count=0;
+		for(Aluno x:pessoas)
+		{
+			if(x.calcularMedia()>=6)
+			{
+				count++;
+				System.out.println("Nome do aluno aprovado: "+x.getNome());
+			}
+			System.out.println("Total de aprovados: "+ count);
+		}
+	}
+	
+	public void mostrarReprovados() 
+	{
+		int count=0;
+		for(Aluno x:pessoas)
+		{
+			if(x.calcularMedia()<6)
+			{
+				count++;
+				System.out.println("Nome do aluno reprovado: "+x.getNome());
+			}
+			System.out.println("Total de reprovados: "+ count);
+		}
+	}
+	
+	public void main(String[] args)
+	{
+		pessoas[0]=a1;
+		pessoas[1]=a2;
+		pessoas[2]=a3;
+		pessoas[3]=a4;
+		pessoas[4]=a5;
+		pessoas[5]=a6;
+		pessoas[6]=a7;
+		pessoas[7]=a8;
+		pessoas[8]=a9;
+		pessoas[9]=a10;
+		
+		
+		
+	}
+	
+}
